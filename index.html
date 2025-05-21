@@ -146,3 +146,81 @@
             }
         }
     </style>
+</head>
+<body>
+    <div class="header-banner">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold">Workbook Interactivo: Aprendiendo a Vivir con TDAH</h1>
+            <p class="mt-2 text-xl">Una guía práctica para gestionar el día a día</p>
+        </div>
+    </div>
+
+    <div class="content-container p-6 mt-6">
+        <section class="section">
+            <h2 class="text-2xl font-bold mb-4">Bienvenido a tu Workbook</h2>
+            <p class="mb-4">Este workbook interactivo está diseñado para ayudarte a entender y manejar mejor el TDAH en tu vida diaria. A través de ejercicios prácticos, consejos y estrategias, podrás desarrollar habilidades que te permitan aprovechar tus fortalezas y superar los desafíos.</p>
+            
+            <div class="tip-box">
+                <h3 class="font-bold"><i class="fas fa-lightbulb mr-2"></i>Consejo</h3>
+                <p>Completa este workbook a tu propio ritmo. No es necesario terminarlo de una sola vez. De hecho, es mejor trabajar en pequeñas secciones y regresar periódicamente para revisar y practicar.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="text-2xl font-bold mb-4">Autoevaluación Inicial</h2>
+            <p class="mb-4">Antes de comenzar, vamos a hacer una breve autoevaluación para entender mejor tu situación actual con el TDAH:</p>
+            
+            <div class="exercise-box">
+                <h3 class="font-bold mb-3">¿Cuáles son tus mayores desafíos relacionados con el TDAH?</h3>
+                <textarea id="challenges" class="text-input" placeholder="Escribe aquí..."></textarea>
+                
+                <h3 class="font-bold mb-3 mt-4">¿Qué estrategias has intentado hasta ahora?</h3>
+                <textarea id="strategies" class="text-input" placeholder="Escribe aquí..."></textarea>
+            </div>
+            
+            <button id="saveSection1" class="save-btn"><i class="fas fa-save mr-2"></i>Guardar respuestas</button>
+            <button id="resetSection1" class="reset-btn"><i class="fas fa-trash-alt mr-2"></i>Borrar respuestas</button>
+        </section>
+
+        <footer class="mt-8 text-center text-gray-600 border-t pt-4">
+            <p>© 2023 Workbook Interactivo TDAH</p>
+        </footer>
+    </div>
+
+    <script>
+        // Función para guardar respuestas en localStorage
+        document.getElementById('saveSection1').addEventListener('click', function() {
+            const challenges = document.getElementById('challenges').value;
+            const strategies = document.getElementById('strategies').value;
+            
+            localStorage.setItem('tdah_challenges', challenges);
+            localStorage.setItem('tdah_strategies', strategies);
+            
+            alert('¡Tus respuestas han sido guardadas!');
+        });
+        
+        // Función para cargar respuestas guardadas
+        window.addEventListener('load', function() {
+            const challenges = localStorage.getItem('tdah_challenges');
+            const strategies = localStorage.getItem('tdah_strategies');
+            
+            if (challenges) document.getElementById('challenges').value = challenges;
+            if (strategies) document.getElementById('strategies').value = strategies;
+        });
+        
+        // Función para borrar respuestas
+        document.getElementById('resetSection1').addEventListener('click', function() {
+            if (confirm('¿Estás seguro de que quieres borrar tus respuestas?')) {
+                document.getElementById('challenges').value = '';
+                document.getElementById('strategies').value = '';
+                
+                localStorage.removeItem('tdah_challenges');
+                localStorage.removeItem('tdah_strategies');
+                
+                alert('Tus respuestas han sido borradas.');
+            }
+        });
+    </script>
+</body>
+</html>
+
