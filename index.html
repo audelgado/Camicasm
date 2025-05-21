@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workbook Interactivo: Aprendiendo a Vivir con TDAH</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .content-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+        .section {
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .text-input {
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f9f9ff;
+            min-height: 100px;
+        }
+        .text-input-short {
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f9f9ff;
+            min-height: 50px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+        }
+        .checkbox-item input {
+            margin-right: 10px;
+        }
+        .tip-box {
+            background-color: #e8f4fd;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .exercise-box {
+            background-color: #f0f8ff;
+            border: 1px solid #d1e7ff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .header-banner {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .save-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .save-btn:hover {
+            background-color: #45a049;
+        }
+        .reset-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        .reset-btn:hover {
+            background-color: #d32f2f;
+        }
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+        .rating > input {
+            display: none;
+        }
+        .rating > label {
+            position: relative;
+            width: 1.1em;
+            font-size: 25px;
+            color: #FFD700;
+            cursor: pointer;
+        }
+        .rating > label::before {
+            content: "\2605";
+            position: absolute;
+            opacity: 0;
+        }
+        .rating > label:hover:before,
+        .rating > label:hover ~ label:before {
+            opacity: 1 !important;
+        }
+        .rating > input:checked ~ label:before {
+            opacity: 1;
+        }
+        .rating:hover > input:checked ~ label:before {
+            opacity: 0.4;
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+            body {
+                background-color: white;
+            }
+            .content-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    </style>
