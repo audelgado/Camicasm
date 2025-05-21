@@ -150,77 +150,937 @@
 <body>
     <div class="header-banner">
         <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold">Workbook Interactivo: Aprendiendo a Vivir con TDAH</h1>
-            <p class="mt-2 text-xl">Una guía práctica para gestionar el día a día</p>
+            <h1 class="text-4xl font-bold mb-4">Workbook Interactivo: Aprendiendo a Vivir con TDAH</h1>
+            <p class="text-xl">Un cuaderno de trabajo práctico basado en evidencia científica</p>
         </div>
     </div>
 
-    <div class="content-container p-6 mt-6">
-        <section class="section">
-            <h2 class="text-2xl font-bold mb-4">Bienvenido a tu Workbook</h2>
-            <p class="mb-4">Este workbook interactivo está diseñado para ayudarte a entender y manejar mejor el TDAH en tu vida diaria. A través de ejercicios prácticos, consejos y estrategias, podrás desarrollar habilidades que te permitan aprovechar tus fortalezas y superar los desafíos.</p>
-            
-            <div class="tip-box">
-                <h3 class="font-bold"><i class="fas fa-lightbulb mr-2"></i>Consejo</h3>
-                <p>Completa este workbook a tu propio ritmo. No es necesario terminarlo de una sola vez. De hecho, es mejor trabajar en pequeñas secciones y regresar periódicamente para revisar y practicar.</p>
+    <div class="content-container p-8">
+        <div class="no-print flex justify-between items-center mb-8 p-4 bg-blue-50 rounded-lg">
+            <div>
+                <h3 class="text-xl font-bold mb-2">Instrucciones</h3>
+                <p>Completa los ejercicios escribiendo en los campos de texto. Tus respuestas se guardarán en tu navegador.</p>
             </div>
-        </section>
+            <div>
+                <button id="saveBtn" class="save-btn"><i class="fas fa-save mr-2"></i>Guardar respuestas</button>
+                <button id="resetBtn" class="reset-btn"><i class="fas fa-trash-alt mr-2"></i>Borrar todo</button>
+            </div>
+        </div>
 
-        <section class="section">
-            <h2 class="text-2xl font-bold mb-4">Autoevaluación Inicial</h2>
-            <p class="mb-4">Antes de comenzar, vamos a hacer una breve autoevaluación para entender mejor tu situación actual con el TDAH:</p>
+        <!-- Introducción -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">Introducción</h2>
+            <p class="mb-4">Bienvenido/a a este workbook interactivo diseñado específicamente para personas con Trastorno por Déficit de Atención e Hiperactividad (TDAH). Este recurso ha sido creado basándose en investigaciones psicológicas actuales para ayudarte a comprender mejor tu TDAH y desarrollar estrategias efectivas para gestionarlo en tu vida diaria.</p>
+            <p class="mb-4">El TDAH es una condición neurobiológica que afecta la capacidad de una persona para mantener la atención, controlar los impulsos y regular su nivel de actividad. Aunque presenta desafíos, también viene con fortalezas únicas que aprenderás a reconocer y potenciar.</p>
+            <p class="mb-4">Este workbook está diseñado para ser interactivo. Encontrarás campos de texto donde podrás escribir tus reflexiones, experiencias y planes de acción. Te recomendamos ser honesto/a en tus respuestas y tomate el tiempo necesario para completar cada ejercicio.</p>
             
             <div class="exercise-box">
-                <h3 class="font-bold mb-3">¿Cuáles son tus mayores desafíos relacionados con el TDAH?</h3>
-                <textarea id="challenges" class="text-input" placeholder="Escribe aquí..."></textarea>
+                <h4 class="font-bold text-lg mb-3">Ejercicio 1: Mi relación con el TDAH</h4>
+                <p class="mb-2">¿Cuándo y cómo descubriste que tenías TDAH? ¿Cómo te sentiste al respecto?</p>
+                <textarea class="text-input" id="exercise1"></textarea>
                 
-                <h3 class="font-bold mb-3 mt-4">¿Qué estrategias has intentado hasta ahora?</h3>
-                <textarea id="strategies" class="text-input" placeholder="Escribe aquí..."></textarea>
+                <p class="mb-2">¿Qué esperas conseguir con este workbook? Escribe 3 objetivos personales:</p>
+                <textarea class="text-input" id="exercise1b"></textarea>
+            </div>
+        </div>
+
+        <!-- Sección 1: Comprendiendo mi TDAH -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">1. Comprendiendo mi TDAH</h2>
+            <p class="mb-4">El TDAH se manifiesta de manera diferente en cada persona. Es importante que comprendas cómo se presenta específicamente en ti para desarrollar estrategias personalizadas y efectivas.</p>
+            
+            <div class="tip-box mb-6">
+                <h4 class="font-bold mb-2"><i class="fas fa-lightbulb mr-2"></i>¿Sabías que?</h4>
+                <p>El TDAH tiene una base neurobiológica. Las investigaciones demuestran que está relacionado con diferencias en ciertas áreas cerebrales, especialmente en aquellas encargadas de las funciones ejecutivas como la corteza prefrontal.</p>
             </div>
             
-            <button id="saveSection1" class="save-btn"><i class="fas fa-save mr-2"></i>Guardar respuestas</button>
-            <button id="resetSection1" class="reset-btn"><i class="fas fa-trash-alt mr-2"></i>Borrar respuestas</button>
-        </section>
+            <h3 class="text-2xl font-bold mb-4">Los tres tipos de TDAH</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Predominantemente inatento:</strong> Dificultad para mantener la atención, seguir instrucciones y completar tareas.</li>
+                <li class="mb-2"><strong>Predominantemente hiperactivo-impulsivo:</strong> Altos niveles de energía, dificultad para quedarse quieto, actuar antes de pensar.</li>
+                <li class="mb-2"><strong>Combinado:</strong> Presenta síntomas de ambos tipos anteriores.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 2: Mi perfil de TDAH</h4>
+                <p class="mb-2">Marca los síntomas que experimentas regularmente:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <h5 class="font-bold mb-2">Síntomas de inatención:</h5>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="inattention1"> <label for="inattention1">Cometo errores por descuido</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="inattention2"> <label for="inattention2">Me cuesta mantener la atención</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="inattention3"> <label for="inattention3">Parece que no escucho cuando me hablan</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="inattention4"> <label for="inattention4">No sigo instrucciones hasta el final</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="inattention5"> <label for="inattention5">Me cuesta organizarme</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="inattention6"> <label for="inattention6">Evito tareas que requieren esfuerzo mental</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="inattention7"> <label for="inattention7">Pierdo cosas necesarias para mis tareas</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="inattention8"> <label for="inattention8">Me distraigo fácilmente</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="inattention9"> <label for="inattention9">Olvido actividades diarias</label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h5 class="font-bold mb-2">Síntomas de hiperactividad/impulsividad:</h5>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hyperactivity1"> <label for="hyperactivity1">Muevo manos/pies o me retuerzo en mi asiento</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hyperactivity2"> <label for="hyperactivity2">Me levanto cuando debería permanecer sentado</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hyperactivity3"> <label for="hyperactivity3">Corro o trepo cuando no es apropiado</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hyperactivity4"> <label for="hyperactivity4">Me cuesta hacer actividades tranquilamente</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hyperactivity5"> <label for="hyperactivity5">Actúo como si tuviera un motor interno</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hyperactivity6"> <label for="hyperactivity6">Hablo excesivamente</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hyperactivity7"> <label for="hyperactivity7">Respondo antes de que terminen la pregunta</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hyperactivity8"> <label for="hyperactivity8">Me cuesta esperar mi turno</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hyperactivity9"> <label for="hyperactivity9">Interrumpo a otros</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="mb-2">Basándote en tus respuestas anteriores, ¿qué tipo de TDAH crees que se ajusta más a tu caso? ¿Por qué?</p>
+                <textarea class="text-input" id="exercise2b"></textarea>
+            </div>
+        </div>
 
-        <footer class="mt-8 text-center text-gray-600 border-t pt-4">
-            <p>© 2023 Workbook Interactivo TDAH</p>
-        </footer>
+        <!-- Sección 2: Impacto del TDAH en mi vida -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">2. Impacto del TDAH en mi vida</h2>
+            <p class="mb-4">El TDAH puede afectar diversos aspectos de la vida diaria. Identificar estos impactos es el primer paso para desarrollar estrategias efectivas que te ayuden a gestionarlos.</p>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 3: Áreas de impacto</h4>
+                <p class="mb-4">Evalúa cómo el TDAH ha afectado las siguientes áreas de tu vida en una escala del 1 al 5 (1 = mínimo impacto, 5 = máximo impacto) y describe brevemente cómo se manifiesta:</p>
+                
+                <div class="mb-4">
+                    <h5 class="font-bold">Estudios/Trabajo</h5>
+                    <div class="rating mb-2">
+                        <input type="radio" id="work5" name="work_rating" value="5"><label for="work5">☆</label>
+                        <input type="radio" id="work4" name="work_rating" value="4"><label for="work4">☆</label>
+                        <input type="radio" id="work3" name="work_rating" value="3"><label for="work3">☆</label>
+                        <input type="radio" id="work2" name="work_rating" value="2"><label for="work2">☆</label>
+                        <input type="radio" id="work1" name="work_rating" value="1"><label for="work1">☆</label>
+                    </div>
+                    <textarea class="text-input-short" id="work_impact"></textarea>
+                </div>
+                
+                <div class="mb-4">
+                    <h5 class="font-bold">Relaciones personales</h5>
+                    <div class="rating mb-2">
+                        <input type="radio" id="relationships5" name="relationships_rating" value="5"><label for="relationships5">☆</label>
+                        <input type="radio" id="relationships4" name="relationships_rating" value="4"><label for="relationships4">☆</label>
+                        <input type="radio" id="relationships3" name="relationships_rating" value="3"><label for="relationships3">☆</label>
+                        <input type="radio" id="relationships2" name="relationships_rating" value="2"><label for="relationships2">☆</label>
+                        <input type="radio" id="relationships1" name="relationships_rating" value="1"><label for="relationships1">☆</label>
+                    </div>
+                    <textarea class="text-input-short" id="relationships_impact"></textarea>
+                </div>
+                
+                <div class="mb-4">
+                    <h5 class="font-bold">Organización personal</h5>
+                    <div class="rating mb-2">
+                        <input type="radio" id="organization5" name="organization_rating" value="5"><label for="organization5">☆</label>
+                        <input type="radio" id="organization4" name="organization_rating" value="4"><label for="organization4">☆</label>
+                        <input type="radio" id="organization3" name="organization_rating" value="3"><label for="organization3">☆</label>
+                        <input type="radio" id="organization2" name="organization_rating" value="2"><label for="organization2">☆</label>
+                        <input type="radio" id="organization1" name="organization_rating" value="1"><label for="organization1">☆</label>
+                    </div>
+                    <textarea class="text-input-short" id="organization_impact"></textarea>
+                </div>
+                
+                <div class="mb-4">
+                    <h5 class="font-bold">Salud y bienestar</h5>
+                    <div class="rating mb-2">
+                        <input type="radio" id="health5" name="health_rating" value="5"><label for="health5">☆</label>
+                        <input type="radio" id="health4" name="health_rating" value="4"><label for="health4">☆</label>
+                        <input type="radio" id="health3" name="health_rating" value="3"><label for="health3">☆</label>
+                        <input type="radio" id="health2" name="health_rating" value="2"><label for="health2">☆</label>
+                        <input type="radio" id="health1" name="health_rating" value="1"><label for="health1">☆</label>
+                    </div>
+                    <textarea class="text-input-short" id="health_impact"></textarea>
+                </div>
+                
+                <div class="mb-4">
+                    <h5 class="font-bold">Autoestima</h5>
+                    <div class="rating mb-2">
+                        <input type="radio" id="esteem5" name="esteem_rating" value="5"><label for="esteem5">☆</label>
+                        <input type="radio" id="esteem4" name="esteem_rating" value="4"><label for="esteem4">☆</label>
+                        <input type="radio" id="esteem3" name="esteem_rating" value="3"><label for="esteem3">☆</label>
+                        <input type="radio" id="esteem2" name="esteem_rating" value="2"><label for="esteem2">☆</label>
+                        <input type="radio" id="esteem1" name="esteem_rating" value="1"><label for="esteem1">☆</label>
+                    </div>
+                    <textarea class="text-input-short" id="esteem_impact"></textarea>
+                </div>
+                
+                <p class="mb-2">¿En qué otras áreas de tu vida sientes que el TDAH tiene un impacto significativo?</p>
+                <textarea class="text-input" id="other_impact"></textarea>
+            </div>
+        </div>
+
+        <!-- Sección 3: Estrategias de organización -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">3. Estrategias de organización</h2>
+            <p class="mb-4">La organización es uno de los mayores desafíos para las personas con TDAH. Desarrollar sistemas adecuados puede hacer una gran diferencia en tu vida diaria.</p>
+            
+            <div class="tip-box mb-6">
+                <h4 class="font-bold mb-2"><i class="fas fa-lightbulb mr-2"></i>Consejo clave</h4>
+                <p>Las personas con TDAH suelen funcionar mejor con sistemas de organización visuales y accesibles. Lo que está fuera de la vista suele quedar fuera de la mente.</p>
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-4">Estrategias efectivas para organizarse con TDAH</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Utiliza un calendario o agenda:</strong> Ya sea digital o física, mantén un sistema para registrar fechas importantes, citas y plazos.</li>
+                <li class="mb-2"><strong>Divide las tareas en pasos pequeños:</strong> Descomponer tareas grandes en pasos manejables las hace menos abrumadoras.</li>
+                <li class="mb-2"><strong>Utiliza listas de tareas:</strong> Anota lo que necesitas hacer y márcalo cuando lo completes.</li>
+                <li class="mb-2"><strong>Establece sistemas visuales:</strong> Usa códigos de colores, etiquetas y organizadores transparentes para que todo sea visible.</li>
+                <li class="mb-2"><strong>Designa lugares específicos:</strong> Asigna un lugar para cada cosa y asegúrate de devolver los objetos a su lugar designado.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 4: Mi sistema de organización</h4>
+                <p class="mb-2">¿Qué métodos de organización has probado en el pasado? ¿Qué ha funcionado y qué no?</p>
+                <textarea class="text-input" id="exercise4a"></textarea>
+                
+                <p class="mb-2">Describe el sistema de organización ideal para ti. ¿Qué herramientas o métodos te gustaría implementar?</p>
+                <textarea class="text-input" id="exercise4b"></textarea>
+                
+                <p class="mb-2">Selecciona 3 estrategias de organización que te comprometes a implementar durante las próximas semanas:</p>
+                <textarea class="text-input" id="exercise4c"></textarea>
+            </div>
+        </div>
+
+        <!-- Sección 4: Gestión del tiempo -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">4. Gestión del tiempo</h2>
+            <p class="mb-4">Las personas con TDAH a menudo tienen una percepción distinta del tiempo, lo que puede dificultar la puntualidad y la administración efectiva de sus horarios. Desarrollar una mejor relación con el tiempo es fundamental.</p>
+            
+            <div class="tip-box mb-6">
+                <h4 class="font-bold mb-2"><i class="fas fa-lightbulb mr-2"></i>Dato científico</h4>
+                <p>Investigaciones recientes sugieren que las personas con TDAH tienen un "sesgo de percepción temporal", es decir, pueden percibir que ha pasado menos tiempo del que realmente ha transcurrido.</p>
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-4">Técnicas para mejorar la gestión del tiempo</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>La técnica Pomodoro:</strong> Trabaja en intervalos enfocados de 25 minutos seguidos de descansos de 5 minutos.</li>
+                <li class="mb-2"><strong>Utiliza temporizadores visibles:</strong> Tener relojes o temporizadores a la vista te ayuda a ser más consciente del paso del tiempo.</li>
+                <li class="mb-2"><strong>Añade tiempo extra:</strong> Para cada tarea o compromiso, añade un 50% más del tiempo que crees que necesitarás.</li>
+                <li class="mb-2"><strong>Establece recordatorios múltiples:</strong> Configura alertas para momentos clave antes de citas o plazos importantes.</li>
+                <li class="mb-2"><strong>Planifica tu día con antelación:</strong> Dedica tiempo cada noche a revisar tu agenda del día siguiente.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 5: Mi relación con el tiempo</h4>
+                <p class="mb-2">¿Cuáles son tus mayores dificultades con la gestión del tiempo? Sé específico/a.</p>
+                <textarea class="text-input" id="exercise5a"></textarea>
+                
+                <p class="mb-2">Piensa en tres ocasiones recientes en las que llegaste tarde o no cumpliste un plazo. ¿Qué sucedió exactamente?</p>
+                <textarea class="text-input" id="exercise5b"></textarea>
+                
+                <h5 class="font-bold mt-4 mb-2">Plan de acción para la gestión del tiempo</h5>
+                <p class="mb-2">Selecciona dos técnicas de las mencionadas anteriormente e indica cómo las implementarás en tu vida diaria:</p>
+                <textarea class="text-input" id="exercise5c"></textarea>
+            </div>
+        </div>
+
+        <!-- Sección 5: Estrategias para mejorar la concentración -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">5. Estrategias para mejorar la concentración</h2>
+            <p class="mb-4">Las dificultades de atención son un síntoma central del TDAH. Existen diversas estrategias que pueden ayudarte a mejorar tu capacidad para concentrarte en tareas importantes.</p>
+            
+            <h3 class="text-2xl font-bold mb-4">Técnicas para potenciar la atención</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Minimiza las distracciones:</strong> Identifica qué te distrae (ruidos, notificaciones, desorden visual) y toma medidas para reducir estos elementos.</li>
+                <li class="mb-2"><strong>Usa ruido blanco o música sin letra:</strong> Algunas personas con TDAH se concentran mejor con un suave ruido de fondo que bloquee otras distracciones.</li>
+                <li class="mb-2"><strong>Trabaja en tus momentos óptimos:</strong> Identifica en qué momentos del día tu atención es más fuerte y programa las tareas más exigentes para esos períodos.</li>
+                <li class="mb-2"><strong>Utiliza movimiento estratégico:</strong> Para algunas personas, moverse (balancearse en una silla, usar un objeto anti-estrés) puede ayudar a mantener la concentración.</li>
+                <li class="mb-2"><strong>Aplica la regla de los 2 minutos:</strong> Si una tarea toma menos de 2 minutos, hazla inmediatamente en lugar de posponerla.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 6: Optimizando mi concentración</h4>
+                <p class="mb-2">¿En qué entornos o situaciones te resulta más fácil concentrarte? Describe en detalle.</p>
+                <textarea class="text-input" id="exercise6a"></textarea>
+                
+                <p class="mb-2">¿Cuáles son tus mayores distractores? Haz una lista y piensa en cómo podrías minimizar cada uno:</p>
+                <textarea class="text-input" id="exercise6b"></textarea>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Mi plan de optimización del entorno:</p>
+                    <p class="mb-2">Describe cómo puedes modificar tu espacio de trabajo o estudio para favorecer la concentración:</p>
+                    <textarea class="text-input" id="exercise6c"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección 6: Autorregulación emocional -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">6. Autorregulación emocional</h2>
+            <p class="mb-4">Las personas con TDAH suelen experimentar las emociones con mayor intensidad y pueden tener dificultades para regularlas. La desregulación emocional no es un síntoma oficial del TDAH, pero es muy común en quienes lo tienen.</p>
+            
+            <div class="tip-box mb-6">
+                <h4 class="font-bold mb-2"><i class="fas fa-lightbulb mr-2"></i>Perspectiva científica</h4>
+                <p>La investigación muestra que las personas con TDAH pueden experimentar "hiperreactividad emocional" - reacciones emocionales más intensas y rápidas que lo típico - debido a diferencias en el funcionamiento de ciertas áreas cerebrales.</p>
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-4">Técnicas de autorregulación emocional</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Practica la pausa consciente:</strong> Cuando sientas una emoción intensa, toma 5 segundos antes de reaccionar.</li>
+                <li class="mb-2"><strong>Reconoce tus emociones:</strong> Pon nombre a lo que sientes para reducir su intensidad ("Estoy sintiendo frustración").</li>
+                <li class="mb-2"><strong>Utiliza técnicas de respiración:</strong> La respiración profunda activa el sistema nervioso parasimpático, que ayuda a calmarse.</li>
+                <li class="mb-2"><strong>Practica mindfulness:</strong> La meditación y la atención plena pueden fortalecer tu capacidad para regular emociones.</li>
+                <li class="mb-2"><strong>Autoconversación positiva:</strong> Desarrolla frases calmantes para momentos difíciles ("Esto pasará", "Puedo manejar esto").</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 7: Mapa de mis emociones</h4>
+                <p class="mb-2">¿Qué emociones sueles experimentar con mayor intensidad? ¿En qué situaciones aparecen?</p>
+                <textarea class="text-input" id="exercise7a"></textarea>
+                
+                <p class="mb-2">Describe una situación reciente en la que tuviste una reacción emocional intensa. ¿Qué la desencadenó? ¿Cómo reaccionaste?</p>
+                <textarea class="text-input" id="exercise7b"></textarea>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Mi kit de primeros auxilios emocionales:</p>
+                    <p class="mb-2">Crea una lista de 5 estrategias que puedes utilizar cuando sientas emociones intensas:</p>
+                    <textarea class="text-input" id="exercise7c"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 7: Estableciendo rutinas efectivas -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">7. Estableciendo rutinas efectivas</h2>
+            <p class="mb-4">Las rutinas proporcionan estructura y previsibilidad, lo que puede ser extremadamente beneficioso para las personas con TDAH. Al crear hábitos consistentes, muchas tareas pueden volverse automáticas, reduciendo la carga cognitiva.</p>
+            
+            <div class="tip-box mb-6">
+                <h4 class="font-bold mb-2"><i class="fas fa-lightbulb mr-2"></i>Consejo clave</h4>
+                <p>Implementar rutinas no significa rigidez absoluta. Las rutinas bien diseñadas para personas con TDAH proporcionan estructura pero también permiten flexibilidad para adaptarse a las necesidades cambiantes y a los días de baja energía.</p>
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-4">Principios para establecer rutinas eficaces</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Empieza poco a poco:</strong> Comienza con 1-2 rutinas y añade más gradualmente cuando las primeras se vuelvan habituales.</li>
+                <li class="mb-2"><strong>Sé consistente:</strong> Intenta realizar las actividades rutinarias a la misma hora y en el mismo orden cada día.</li>
+                <li class="mb-2"><strong>Utiliza ayudas visuales:</strong> Listas de verificación, horarios visuales o recordatorios que te guíen a través de tu rutina.</li>
+                <li class="mb-2"><strong>Incorpora recompensas:</strong> Vincula actividades agradables con tareas menos apetecibles para aumentar la motivación.</li>
+                <li class="mb-2"><strong>Prepárate para el día siguiente:</strong> Una rutina nocturna que incluya preparar lo necesario para el día siguiente puede reducir el estrés matutino.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 8: Diseñando mis rutinas</h4>
+                <p class="mb-2">Diseña una rutina matutina ideal que te ayude a empezar el día con el pie derecho:</p>
+                <textarea class="text-input" id="exercise8a"></textarea>
+                
+                <p class="mb-2">Diseña una rutina nocturna que te ayude a cerrar el día y prepararte para dormir bien:</p>
+                <textarea class="text-input" id="exercise8b"></textarea>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Rutina para tareas difíciles:</p>
+                    <p class="mb-2">Crea una rutina específica para ayudarte a abordar tareas que habitualmente postergas:</p>
+                    <textarea class="text-input" id="exercise8c"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 8: Manejo de la impulsividad -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">8. Manejo de la impulsividad</h2>
+            <p class="mb-4">La impulsividad es una característica común del TDAH que puede manifestarse en decisiones precipitadas, interrupciones en conversaciones, gastos impulsivos o dificultad para esperar. Desarrollar estrategias para gestionar esta impulsividad puede mejorar significativamente tu calidad de vida.</p>
+            
+            <h3 class="text-2xl font-bold mb-4">Estrategias para controlar la impulsividad</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>La regla HALT:</strong> Antes de tomar una decisión importante, pregúntate si estás Hambriento, Enfadado (Angry), Solo o Cansado (Tired). Estos estados aumentan la impulsividad.</li>
+                <li class="mb-2"><strong>Implementa tiempos de espera:</strong> Establece reglas como "esperar 24 horas antes de compras no planificadas".</li>
+                <li class="mb-2"><strong>Utiliza recordatorios visuales:</strong> Notas o señales que te recuerden hacer una pausa antes de actuar.</li>
+                <li class="mb-2"><strong>Practica la técnica "Stop-Think-Act":</strong> Detente, piensa en las consecuencias, y luego actúa.</li>
+                <li class="mb-2"><strong>Busca actividades para canalizar la energía:</strong> El ejercicio físico puede ayudar a reducir la sensación de inquietud.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 9: Reconociendo mi impulsividad</h4>
+                <p class="mb-2">Describe situaciones recientes en las que actuaste impulsivamente y las consecuencias que tuvieron:</p>
+                <textarea class="text-input" id="exercise9a"></textarea>
+                
+                <p class="mb-2">¿Qué señales físicas o emocionales notas antes de actuar impulsivamente? (Por ejemplo: inquietud, aburrimiento, entusiasmo excesivo)</p>
+                <textarea class="text-input" id="exercise9b"></textarea>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Mi plan para la impulsividad:</p>
+                    <p class="mb-2">Escribe 3 estrategias específicas que implementarás para manejar tu impulsividad en diferentes contextos:</p>
+                    <textarea class="text-input" id="exercise9c"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 9: Mindfulness para el TDAH -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">9. Mindfulness para el TDAH</h2>
+            <p class="mb-4">El mindfulness o atención plena es particularmente beneficioso para las personas con TDAH. Esta práctica implica prestar atención al momento presente de manera intencional y sin juzgar, lo que puede fortalecer la capacidad de atención y reducir la impulsividad.</p>
+            
+            <div class="tip-box mb-6">
+                <h4 class="font-bold mb-2"><i class="fas fa-lightbulb mr-2"></i>Evidencia científica</h4>
+                <p>Diversos estudios han demostrado que la práctica regular de mindfulness puede mejorar la atención sostenida, reducir la hiperactividad/impulsividad y disminuir los niveles de estrés en personas con TDAH.</p>
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-4">Prácticas de mindfulness adaptadas para TDAH</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Meditaciones breves:</strong> Comenzar con prácticas cortas (3-5 minutos) e ir incrementando gradualmente.</li>
+                <li class="mb-2"><strong>Mindfulness en movimiento:</strong> Yoga, tai chi o caminar consciente pueden ser más accesibles que meditaciones estáticas.</li>
+                <li class="mb-2"><strong>Ejercicios de respiración:</strong> Concentrarse en la respiración es una forma sencilla de entrenar la atención.</li>
+                <li class="mb-2"><strong>Mindfulness en actividades cotidianas:</strong> Prestar atención plena mientras comes, te duchas o caminas.</li>
+                <li class="mb-2"><strong>Escaneo corporal:</strong> Llevar la atención sistemáticamente por todas las partes del cuerpo.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 10: Iniciando la práctica de mindfulness</h4>
+                <p class="mb-2">Si ya has practicado mindfulness antes, ¿cuál ha sido tu experiencia? Si es nuevo para ti, ¿qué te atrae de esta práctica?</p>
+                <textarea class="text-input" id="exercise10a"></textarea>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Ejercicio de respiración consciente (5 minutos):</p>
+                    <p class="mb-2">Siéntate cómodamente y cierra los ojos. Respira naturalmente y enfoca tu atención en las sensaciones de la respiración. Cuando tu mente divague (lo cual es normal), nota amablemente hacia dónde fue tu atención y redirige el foco a tu respiración. Después de practicar, responde: ¿Cómo te sentiste durante y después del ejercicio?</p>
+                    <textarea class="text-input" id="exercise10b"></textarea>
+                </div>
+                
+                <p class="mb-2">Planifica cómo incorporarás el mindfulness en tu rutina diaria. ¿Qué tipo de prácticas te gustaría probar? ¿En qué momentos del día?</p>
+                <textarea class="text-input" id="exercise10c"></textarea>
+            </div>
+        </div>
+
+        <!-- Sección 10: Estrategias para el entorno laboral/académico -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">10. Estrategias para el entorno laboral/académico</h2>
+            <p class="mb-4">El TDAH puede presentar desafíos específicos en entornos laborales o académicos. Sin embargo, con las adaptaciones adecuadas, puedes maximizar tu rendimiento y aprovechar tus fortalezas únicas.</p>
+            
+            <h3 class="text-2xl font-bold mb-4">Estrategias para el entorno laboral</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Optimiza tu espacio de trabajo:</strong> Minimiza distracciones visuales y auditivas; considera usar auriculares con cancelación de ruido.</li>
+                <li class="mb-2"><strong>Solicita adaptaciones razonables:</strong> Dependiendo de tu situación, podrías beneficiarte de horarios flexibles, teletrabajo parcial, o un espacio de trabajo más tranquilo.</li>
+                <li class="mb-2"><strong>Programa descansos regulares:</strong> Periodos breves de descanso pueden mejorar tu productividad.</li>
+                <li class="mb-2"><strong>Utiliza la técnica de "agrupación de tareas":</strong> Agrupa tareas similares para reducir el costo cognitivo de cambiar constantemente de actividad.</li>
+                <li class="mb-2"><strong>Busca un mentor o compañero de responsabilidad:</strong> Alguien que te ayude a mantenerte en el camino.</li>
+            </ul>
+            
+            <h3 class="text-2xl font-bold mb-4">Estrategias para el entorno académico</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Siéntate cerca del profesor:</strong> Esto reduce distracciones y facilita mantener la atención.</li>
+                <li class="mb-2"><strong>Utiliza métodos de estudio activos:</strong> Mapas mentales, flashcards, enseñar el material a otros.</li>
+                <li class="mb-2"><strong>Graba las clases (con permiso):</strong> Te permite revisarlas después a tu propio ritmo.</li>
+                <li class="mb-2"><strong>Divide el estudio en sesiones cortas:</strong> Estudiar en intervalos breves con descansos programados.</li>
+                <li class="mb-2"><strong>Conoce tus derechos:</strong> Infórmate sobre las adaptaciones disponibles para estudiantes con TDAH.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 11: Optimizando mi entorno de trabajo/estudio</h4>
+                <p class="mb-2">Describe los mayores desafíos que enfrentas en tu entorno laboral o académico debido al TDAH:</p>
+                <textarea class="text-input" id="exercise11a"></textarea>
+                
+                <p class="mb-2">¿Qué adaptaciones o cambios te serían más beneficiosos? ¿Cómo podrías implementarlos?</p>
+                <textarea class="text-input" id="exercise11b"></textarea>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Mi plan de adaptación:</p>
+                    <p class="mb-2">Escribe 3 cambios específicos que implementarás en tu entorno de trabajo o estudio:</p>
+                    <textarea class="text-input" id="exercise11c"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 11: Comunicación y relaciones sociales -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">11. Comunicación y relaciones sociales</h2>
+            <p class="mb-4">El TDAH puede afectar la comunicación y las relaciones interpersonales de diversas maneras. Interrumpir conversaciones, divagar al hablar, olvidar compromisos sociales o malinterpretar señales sociales son algunas dificultades comunes. Sin embargo, con autoconocimiento y estrategias específicas, puedes mejorar significativamente tus habilidades sociales.</p>
+            
+            <h3 class="text-2xl font-bold mb-4">Estrategias para mejorar la comunicación</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Practica la escucha activa:</strong> Haz un esfuerzo consciente por mantener contacto visual, asentir y hacer preguntas relevantes.</li>
+                <li class="mb-2"><strong>Desarrolla señales o gestos acordados:</strong> Con personas cercanas, establece señales discretas que te indiquen cuando estás monopolizando la conversación.</li>
+                <li class="mb-2"><strong>Utiliza la técnica de "pausa y verificación":</strong> Haz pausas regulares para asegurarte de que la persona comprende lo que estás diciendo.</li>
+                <li class="mb-2"><strong>Comunica tus necesidades:</strong> Explica a las personas importantes en tu vida cómo afecta el TDAH a tu comunicación y qué pueden hacer para ayudar.</li>
+                <li class="mb-2"><strong>Practica la asertividad:</strong> Aprende a expresar tus necesidades y límites de manera respetuosa pero firme.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 12: Mejorando mis relaciones</h4>
+                <p class="mb-2">¿Qué aspectos de la comunicación representan mayores desafíos para ti debido al TDAH?</p>
+                <textarea class="text-input" id="exercise12a"></textarea>
+                
+                <p class="mb-2">Piensa en una relación importante que se ha visto afectada por tu TDAH. ¿Cómo ha impactado específicamente?</p>
+                <textarea class="text-input" id="exercise12b"></textarea>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Mi guion para hablar sobre el TDAH:</p>
+                    <p class="mb-2">Escribe cómo explicarías a una persona importante en tu vida cómo te afecta el TDAH y qué podrían hacer para apoyarte:</p>
+                    <textarea class="text-input" id="exercise12c"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 12: Alimentación y ejercicio para el TDAH -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">12. Alimentación y ejercicio para el TDAH</h2>
+            <p class="mb-4">El estilo de vida, especialmente la alimentación y el ejercicio, puede tener un impacto significativo en los síntomas del TDAH. Si bien no reemplazan otros tratamientos, estos factores pueden complementarlos y mejorar tu bienestar general.</p>
+            
+            <div class="tip-box mb-6">
+                <h4 class="font-bold mb-2"><i class="fas fa-lightbulb mr-2"></i>Evidencia científica</h4>
+                <p>Diversos estudios han demostrado que el ejercicio aeróbico regular puede mejorar la función ejecutiva, reducir la inquietud y mejorar la concentración en personas con TDAH, posiblemente debido al aumento de neurotransmisores como la dopamina y norepinefrina.</p>
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-4">Recomendaciones nutricionales</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Proteínas:</strong> Incluye proteínas de calidad en cada comida para estabilizar los niveles de azúcar en sangre y mejorar la concentración.</li>
+                <li class="mb-2"><strong>Grasas saludables:</strong> Omega-3 (pescado, nueces, semillas de lino) puede mejorar la función cerebral.</li>
+                <li class="mb-2"><strong>Comidas pequeñas y frecuentes:</strong> Pueden ayudar a mantener niveles estables de energía y atención.</li>
+                <li class="mb-2"><strong>Reduce azúcares refinados y alimentos procesados:</strong> Pueden causar picos y caídas de energía.</li>
+                <li class="mb-2"><strong>Atención a posibles sensibilidades alimentarias:</strong> Algunas personas notan mejoras al reducir ciertos aditivos o alimentos específicos.</li>
+            </ul>
+            
+            <h3 class="text-2xl font-bold mb-4">Beneficios del ejercicio</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Mejora la concentración:</strong> El ejercicio aeróbico aumenta la producción de neurotransmisores relacionados con la atención.</li>
+                <li class="mb-2"><strong>Reduce el estrés y la ansiedad:</strong> Factores que suelen exacerbar los síntomas del TDAH.</li>
+                <li class="mb-2"><strong>Mejora el sueño:</strong> El ejercicio regular puede ayudar a regular los patrones de sueño.</li>
+                <li class="mb-2"><strong>Aumenta la autoestima:</strong> Los logros en actividades físicas pueden mejorar la autopercepción.</li>
+                <li class="mb-2"><strong>Ofrece un canal para la energía excesiva:</strong> Especialmente útil para quienes experimentan hiperactividad.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 13: Mi plan de bienestar físico</h4>
+                <p class="mb-2">¿Has notado alguna relación entre lo que comes y tus síntomas de TDAH? Describe patrones que hayas observado:</p>
+                <textarea class="text-input" id="exercise13a"></textarea>
+                
+                <p class="mb-2">¿Qué tipo de actividad física disfrutas más? ¿Cómo te sientes después de realizarla?</p>
+                <textarea class="text-input" id="exercise13b"></textarea>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Mi plan de alimentación y ejercicio:</p>
+                    <p class="mb-2">Escribe 3 cambios específicos y realistas que implementarás en tu dieta y 3 para incorporar más actividad física:</p>
+                    <textarea class="text-input" id="exercise13c"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 13: Sueño y TDAH -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">13. Sueño y TDAH</h2>
+            <p class="mb-4">Los problemas de sueño son extremadamente comunes en personas con TDAH. La dificultad para conciliar el sueño, mantenerlo durante la noche, o despertarse por la mañana pueden exacerbar significativamente los síntomas del TDAH durante el día.</p>
+            
+            <div class="tip-box mb-6">
+                <h4 class="font-bold mb-2"><i class="fas fa-lightbulb mr-2"></i>Dato importante</h4>
+                <p>Hasta el 75% de los adultos con TDAH reportan dificultades con el sueño. La falta de sueño puede empeorar significativamente los síntomas de inatención, impulsividad y desregulación emocional.</p>
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-4">Estrategias para mejorar el sueño</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Establece un horario regular:</strong> Intenta acostarte y levantarte a la misma hora todos los días, incluso los fines de semana.</li>
+                <li class="mb-2"><strong>Crea una rutina para ir a dormir:</strong> Actividades relajantes como leer, tomar un baño tibio o practicar meditación.</li>
+                <li class="mb-2"><strong>Optimiza tu ambiente de sueño:</strong> Habitación oscura, fresca y silenciosa; considera usar ruido blanco si hay ruidos ambientales.</li>
+                <li class="mb-2"><strong>Limita la exposición a pantallas:</strong> Evita dispositivos electrónicos al menos una hora antes de acostarte.</li>
+                <li class="mb-2"><strong>Considera la melatonina:</strong> Consulta con un profesional sobre suplementos de melatonina, que pueden ser útiles para algunos adultos con TDAH.</li>
+                <li class="mb-2"><strong>Limita la cafeína y el alcohol:</strong> Evita la cafeína después del mediodía y limita el consumo de alcohol, que puede interrumpir los patrones de sueño.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 14: Mejorando mi sueño</h4>
+                <p class="mb-2">Describe tus patrones de sueño actuales y los problemas específicos que experimentas:</p>
+                <textarea class="text-input" id="exercise14a"></textarea>
+                
+                <p class="mb-2">¿Has notado qué factores mejoran o empeoran tu sueño?</p>
+                <textarea class="text-input" id="exercise14b"></textarea>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Mi rutina ideal para ir a dormir:</p>
+                    <p class="mb-2">Diseña una rutina nocturna realista que puedas implementar para mejorar tu calidad de sueño:</p>
+                    <textarea class="text-input" id="exercise14c"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 14: Las fortalezas del TDAH -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">14. Las fortalezas del TDAH</h2>
+            <p class="mb-4">Aunque el TDAH presenta desafíos, también está asociado con numerosas fortalezas y cualidades positivas. Reconocer y aprovechar estas ventajas puede mejorar significativamente tu autoestima y ayudarte a encontrar entornos donde tus habilidades naturales brillen.</p>
+            
+            <h3 class="text-2xl font-bold mb-4">Potenciales fortalezas asociadas al TDAH</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Creatividad e innovación:</strong> Pensamiento divergente, capacidad para hacer conexiones inusuales y generar ideas originales.</li>
+                <li class="mb-2"><strong>Capacidad de hiperfocalización:</strong> Habilidad para sumergirse profundamente en tareas interesantes, a menudo logrando niveles extraordinarios de productividad.</li>
+                <li class="mb-2"><strong>Resiliencia:</strong> Muchas personas con TDAH desarrollan una notable capacidad para recuperarse de los reveses.</li>
+                <li class="mb-2"><strong>Pensamiento holístico:</strong> Capacidad para ver el panorama general y pensar de manera global antes que secuencial.</li>
+                <li class="mb-2"><strong>Energía y entusiasmo:</strong> A menudo descritos como dinámicos, enérgicos y apasionados.</li>
+                <li class="mb-2"><strong>Intuición:</strong> Toma de decisiones basada en la intuición que a veces puede ser sorprendentemente acertada.</li>
+                <li class="mb-2"><strong>Adaptabilidad:</strong> Capacidad para adaptarse rápidamente a nuevas situaciones y pensar de forma ágil.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 15: Reconociendo mis fortalezas</h4>
+                <p class="mb-2">De la lista anterior, ¿cuáles consideras que son tus mayores fortalezas? Proporciona ejemplos específicos de cómo se manifiestan en tu vida:</p>
+                <textarea class="text-input" id="exercise15a"></textarea>
+                
+                <p class="mb-2">¿Qué otras fortalezas personales no mencionadas anteriormente crees que podrían estar relacionadas con tu TDAH?</p>
+                <textarea class="text-input" id="exercise15b"></textarea>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Potenciando mis fortalezas:</p>
+                    <p class="mb-2">Describe cómo podrías aprovechar mejor tus fortalezas en tu vida cotidiana, trabajo o estudios:</p>
+                    <textarea class="text-input" id="exercise15c"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 15: Tecnología como aliada -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">15. Tecnología como aliada</h2>
+            <p class="mb-4">La tecnología moderna ofrece numerosas herramientas que pueden ser especialmente útiles para las personas con TDAH, ayudando a compensar áreas de dificultad como la organización, la gestión del tiempo y la memoria.</p>
+            
+            <h3 class="text-2xl font-bold mb-4">Herramientas tecnológicas útiles</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Aplicaciones de gestión de tareas:</strong> Todoist, Microsoft To Do, Asana - para organizar y priorizar tareas.</li>
+                <li class="mb-2"><strong>Aplicaciones de calendario:</strong> Google Calendar, Apple Calendar - para programar y recibir recordatorios.</li>
+                <li class="mb-2"><strong>Aplicaciones de notas:</strong> Evernote, OneNote, Notion - para capturar ideas y organizar información.</li>
+                <li class="mb-2"><strong>Temporizadores y aplicaciones Pomodoro:</strong> Focus Timer, Forest - para estructurar el tiempo de trabajo.</li>
+                <li class="mb-2"><strong>Aplicaciones de mindfulness:</strong> Headspace, Calm - para practicar meditación y atención plena.</li>
+                <li class="mb-2"><strong>Bloqueadores de distracciones:</strong> Freedom, Cold Turkey - para limitar el acceso a sitios web o aplicaciones distractoras.</li>
+                <li class="mb-2"><strong>Aplicaciones de hábitos:</strong> Habitica, TickTick - para establecer y mantener rutinas positivas.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 16: Mi kit de herramientas tecnológicas</h4>
+                <p class="mb-2">¿Qué herramientas tecnológicas has utilizado hasta ahora para gestionar tu TDAH? ¿Qué ha funcionado y qué no?</p>
+                <textarea class="text-input" id="exercise16a"></textarea>
+                
+                <p class="mb-2">De la lista anterior, ¿qué nuevas herramientas te gustaría probar? ¿Para qué desafíos específicos las usarías?</p>
+                <textarea class="text-input" id="exercise16b"></textarea>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Mi plan de implementación tecnológica:</p>
+                    <p class="mb-2">Selecciona 2-3 herramientas tecnológicas y describe cómo las incorporarás a tu rutina diaria:</p>
+                    <textarea class="text-input" id="exercise16c"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 16: Tratamiento multimodal -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">16. Tratamiento multimodal</h2>
+            <p class="mb-4">La evidencia científica muestra que el enfoque más efectivo para el TDAH es el tratamiento multimodal, que combina diferentes intervenciones. Este enfoque integral puede incluir medicación, terapia, modificaciones en el estilo de vida y estrategias de autoayuda como las que estamos trabajando en este workbook.</p>
+            
+            <div class="tip-box mb-6">
+                <h4 class="font-bold mb-2"><i class="fas fa-lightbulb mr-2"></i>Dato importante</h4>
+                <p>La investigación demuestra que la combinación de medicación y terapia cognitivo-conductual suele ser más efectiva que cualquiera de estas intervenciones por sí sola para adultos con TDAH.</p>
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-4">Componentes del tratamiento multimodal</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Medicación:</strong> Estimulantes (metilfenidato, anfetaminas) y no estimulantes que pueden ayudar a mejorar la atención y reducir la impulsividad.</li>
+                <li class="mb-2"><strong>Terapia psicológica:</strong> Especialmente la terapia cognitivo-conductual adaptada para TDAH, que enseña estrategias específicas para manejar los síntomas.</li>
+                <li class="mb-2"><strong>Coaching para TDAH:</strong> Apoyo práctico para implementar estrategias de organización, planificación y establecimiento de metas.</li>
+                <li class="mb-2"><strong>Educación:</strong> Comprender el TDAH y cómo afecta tu vida es fundamental para su manejo efectivo.</li>
+                <li class="mb-2"><strong>Modificaciones del estilo de vida:</strong> Ejercicio regular, alimentación equilibrada, sueño adecuado y técnicas de reducción del estrés.</li>
+                <li class="mb-2"><strong>Grupos de apoyo:</strong> Conectar con otras personas con TDAH puede proporcionar comprensión, consejos prácticos y apoyo emocional.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 17: Mi enfoque de tratamiento</h4>
+                <p class="mb-2">¿Qué componentes del tratamiento multimodal has probado hasta ahora? ¿Cuáles han sido más útiles?</p>
+                <textarea class="text-input" id="exercise17a"></textarea>
+                
+                <p class="mb-2">¿Hay algún componente adicional que crees que podría beneficiarte? ¿Qué te impide acceder a él actualmente?</p>
+                <textarea class="text-input" id="exercise17b"></textarea>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Mi plan de tratamiento integral:</p>
+                    <p class="mb-2">Elabora un plan realista que integre diferentes componentes del tratamiento para tu TDAH:</p>
+                    <textarea class="text-input" id="exercise17c"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 17: Autocuidado y reducción del estrés -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">17. Autocuidado y reducción del estrés</h2>
+            <p class="mb-4">El estrés puede exacerbar significativamente los síntomas del TDAH, creando un ciclo negativo. Por otro lado, las prácticas de autocuidado pueden ayudar a reducir el estrés y mejorar tu bienestar general, lo que a su vez puede aliviar los síntomas del TDAH.</p>
+            
+            <h3 class="text-2xl font-bold mb-4">Estrategias de autocuidado</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Establece límites saludables:</strong> Aprende a decir "no" y a proteger tu tiempo y energía.</li>
+                <li class="mb-2"><strong>Incorpora actividades placenteras:</strong> Asegúrate de hacer regularmente actividades que disfrutes y te den satisfacción.</li>
+                <li class="mb-2"><strong>Practica técnicas de relajación:</strong> Respiración profunda, relajación muscular progresiva, visualización.</li>
+                <li class="mb-2"><strong>Conéctate con la naturaleza:</strong> Pasar tiempo al aire libre puede reducir el estrés y mejorar el estado de ánimo.</li>
+                <li class="mb-2"><strong>Cultiva relaciones positivas:</strong> Mantén contacto regular con personas que te apoyan y comprenden.</li>
+                <li class="mb-2"><strong>Monitorea tu diálogo interno:</strong> Practica la autocompasión y desafía la autocrítica excesiva.</li>
+                <li class="mb-2"><strong>Practica el descanso estratégico:</strong> Toma descansos cortos durante el día antes de llegar al agotamiento.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 18: Mi plan de autocuidado</h4>
+                <p class="mb-2">¿Cuáles son tus principales fuentes de estrés actualmente? ¿Cómo afectan a tus síntomas de TDAH?</p>
+                <textarea class="text-input" id="exercise18a"></textarea>
+                
+                <p class="mb-2">¿Qué actividades te ayudan a relajarte y reducir el estrés? ¿Con qué frecuencia las realizas?</p>
+                <textarea class="text-input" id="exercise18b"></textarea>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Mi rutina de autocuidado semanal:</p>
+                    <p class="mb-2">Diseña una rutina realista que incluya al menos una actividad de autocuidado cada día:</p>
+                    <textarea class="text-input" id="exercise18c"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 18: Plan de acción personalizado -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">18. Plan de acción personalizado</h2>
+            <p class="mb-4">Has llegado al momento de consolidar todo lo aprendido en un plan de acción personalizado. Este plan te servirá como hoja de ruta para implementar de manera efectiva las estrategias que has explorado a lo largo de este workbook.</p>
+            
+            <div class="tip-box mb-6">
+                <h4 class="font-bold mb-2"><i class="fas fa-lightbulb mr-2"></i>Consejo clave</h4>
+                <p>Un plan efectivo para el TDAH debe ser realista, específico y adaptado a tus necesidades particulares. Comienza con cambios pequeños y manejables antes de abordar desafíos más grandes.</p>
+            </div>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 19: Mi plan de acción personalizado</h4>
+                
+                <p class="mb-2">Revisando todo el workbook, identifica las 5 estrategias más valiosas que has descubierto:</p>
+                <textarea class="text-input" id="exercise19a"></textarea>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Metas a corto plazo (próximas 2 semanas):</p>
+                    <p class="mb-2">Establece 2-3 metas específicas, medibles y alcanzables:</p>
+                    <textarea class="text-input" id="exercise19b"></textarea>
+                </div>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Metas a medio plazo (próximos 3 meses):</p>
+                    <p class="mb-2">Establece 2-3 metas que te gustaría alcanzar en los próximos meses:</p>
+                    <textarea class="text-input" id="exercise19c"></textarea>
+                </div>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Recursos necesarios:</p>
+                    <p class="mb-2">¿Qué herramientas, apoyos o recursos necesitarás para implementar tu plan?</p>
+                    <textarea class="text-input" id="exercise19d"></textarea>
+                </div>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Posibles obstáculos y estrategias para superarlos:</p>
+                    <p class="mb-2">Identifica posibles barreras y cómo planeas abordarlas:</p>
+                    <textarea class="text-input" id="exercise19e"></textarea>
+                </div>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Sistema de seguimiento:</p>
+                    <p class="mb-2">¿Cómo monitorearás tu progreso? ¿Con qué frecuencia revisarás tu plan?</p>
+                    <textarea class="text-input" id="exercise19f"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 19: Conclusión y siguientes pasos -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">19. Conclusión y siguientes pasos</h2>
+            <p class="mb-4">Completar este workbook representa un paso importante en tu viaje para aprender a vivir mejor con el TDAH. Has adquirido conocimientos, reflexionado sobre tus experiencias y desarrollado estrategias personalizadas para afrontar los desafíos que presenta el TDAH.</p>
+            
+            <h3 class="text-2xl font-bold mb-4">Recuerda estos principios fundamentales:</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>El progreso no es lineal:</strong> Habrá días buenos y días difíciles. La consistencia a largo plazo es lo que importa.</li>
+                <li class="mb-2"><strong>La autocompasión es esencial:</strong> Sé paciente y amable contigo mismo/a mientras implementas estos cambios.</li>
+                <li class="mb-2"><strong>La adaptabilidad es clave:</strong> Ajusta las estrategias según sea necesario para que funcionen mejor para ti.</li>
+                <li class="mb-2"><strong>Busca apoyo:</strong> No tienes que hacerlo solo/a. Conecta con profesionales, grupos de apoyo o personas cercanas.</li>
+                <li class="mb-2"><strong>Celebra tus logros:</strong> Reconoce y celebra tus avances, por pequeños que sean.</li>
+            </ul>
+            
+            <h3 class="text-2xl font-bold mb-4">Siguientes pasos recomendados:</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2"><strong>Revisa este workbook regularmente:</strong> Vuelve a él para refrescar estrategias o cuando enfrentes nuevos desafíos.</li>
+                <li class="mb-2"><strong>Considera trabajar con un profesional:</strong> Un psicólogo, psiquiatra o coach especializado en TDAH puede proporcionarte apoyo adicional.</li>
+                <li class="mb-2"><strong>Explora recursos adicionales:</strong> Libros, podcasts, cursos online o grupos de apoyo específicos para TDAH.</li>
+                <li class="mb-2"><strong>Actualiza tu plan:</strong> A medida que avances, revisa y actualiza tu plan de acción según sea necesario.</li>
+            </ul>
+            
+            <div class="exercise-box">
+                <h4 class="font-bold text-lg mb-3">Ejercicio 20: Reflexión final</h4>
+                <p class="mb-2">¿Qué has aprendido sobre ti mismo/a y tu TDAH a través de este workbook?</p>
+                <textarea class="text-input" id="exercise20a"></textarea>
+                
+                <p class="mb-2">¿Qué compromisos específicos haces contigo mismo/a para continuar este viaje de crecimiento?</p>
+                <textarea class="text-input" id="exercise20b"></textarea>
+                
+                <div class="mt-4 mb-4">
+                    <p class="font-bold mb-2">Carta a mi futuro yo:</p>
+                    <p class="mb-2">Escribe una breve carta a tu "yo" del futuro, recordándote tus compromisos y expresando tus esperanzas:</p>
+                    <textarea class="text-input" id="exercise20c"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Referencias -->
+        <div class="section">
+            <h2 class="text-3xl font-bold mb-6">Referencias y recursos adicionales</h2>
+            <p class="mb-4">Este workbook se ha desarrollado basándose en investigaciones científicas actuales sobre el TDAH y prácticas clínicas efectivas. A continuación, encontrarás referencias y recursos adicionales que pueden ser útiles en tu viaje:</p>
+            
+            <h3 class="text-2xl font-bold mb-4">Libros recomendados:</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2">Barkley, R. A. (2015). Tomar el control del TDAH en la edad adulta.</li>
+                <li class="mb-2">Brown, T. E. (2013). Smart but Stuck: Emotions in Teens and Adults with ADHD.</li>
+                <li class="mb-2">Hallowell, E. M., & Ratey, J. J. (2011). Delivered from Distraction.</li>
+                <li class="mb-2">Solden, S. (2012). Women with Attention Deficit Disorder.</li>
+            </ul>
+            
+            <h3 class="text-2xl font-bold mb-4">Organizaciones y sitios web:</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2">CHADD (Children and Adults with Attention-Deficit/Hyperactivity Disorder): <a href="https://chadd.org/" class="text-blue-600">chadd.org</a></li>
+                <li class="mb-2">ADDitude Magazine: <a href="https://www.additudemag.com/" class="text-blue-600">additudemag.com</a></li>
+                <li class="mb-2">Fundación CADAH: <a href="https://www.fundacioncadah.org/" class="text-blue-600">fundacioncadah.org</a></li>
+                <li class="mb-2">TDAH y Tú: <a href="https://www.tdahytu.es/" class="text-blue-600">tdahytu.es</a></li>
+            </ul>
+            
+            <h3 class="text-2xl font-bold mb-4">Aplicaciones y herramientas:</h3>
+            <ul class="list-disc pl-6 mb-6">
+                <li class="mb-2">Aplicaciones de productividad: Todoist, Trello, Microsoft To Do</li>
+                <li class="mb-2">Aplicaciones de mindfulness: Headspace, Calm, Insight Timer</li>
+                <li class="mb-2">Temporizadores Pomodoro: Forest, Focus Keeper, Be Focused</li>
+                <li class="mb-2">Organizadores de notas: Evernote, OneNote, Notion</li>
+            </ul>
+        </div>
+
+        <div class="mt-8 mb-4 no-print">
+            <button id="saveBtnBottom" class="save-btn"><i class="fas fa-save mr-2"></i>Guardar respuestas</button>
+            <button id="resetBtnBottom" class="reset-btn"><i class="fas fa-trash-alt mr-2"></i>Borrar todo</button>
+        </div>
+        
+        <div class="text-center text-gray-600 mt-8 pt-8 border-t border-gray-200">
+            <p>© 2024 Workbook Interactivo: Aprendiendo a Vivir con TDAH</p>
+            <p class="mt-2">Basado en investigaciones psicológicas actuales y prácticas clínicas efectivas.</p>
+        </div>
     </div>
 
     <script>
-        // Función para guardar respuestas en localStorage
-        document.getElementById('saveSection1').addEventListener('click', function() {
-            const challenges = document.getElementById('challenges').value;
-            const strategies = document.getElementById('strategies').value;
+        // Save and restore form data
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all form elements
+            const textInputs = document.querySelectorAll('textarea');
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
             
-            localStorage.setItem('tdah_challenges', challenges);
-            localStorage.setItem('tdah_strategies', strategies);
-            
-            alert('¡Tus respuestas han sido guardadas!');
-        });
-        
-        // Función para cargar respuestas guardadas
-        window.addEventListener('load', function() {
-            const challenges = localStorage.getItem('tdah_challenges');
-            const strategies = localStorage.getItem('tdah_strategies');
-            
-            if (challenges) document.getElementById('challenges').value = challenges;
-            if (strategies) document.getElementById('strategies').value = strategies;
-        });
-        
-        // Función para borrar respuestas
-        document.getElementById('resetSection1').addEventListener('click', function() {
-            if (confirm('¿Estás seguro de que quieres borrar tus respuestas?')) {
-                document.getElementById('challenges').value = '';
-                document.getElementById('strategies').value = '';
+            // Load saved data if available
+            if (localStorage.getItem('tdah_workbook_data')) {
+                const savedData = JSON.parse(localStorage.getItem('tdah_workbook_data'));
                 
-                localStorage.removeItem('tdah_challenges');
-                localStorage.removeItem('tdah_strategies');
+                // Restore text inputs
+                textInputs.forEach(input => {
+                    if (savedData[input.id]) {
+                        input.value = savedData[input.id];
+                    }
+                });
                 
-                alert('Tus respuestas han sido borradas.');
+                // Restore checkboxes
+                checkboxes.forEach(checkbox => {
+                    if (savedData[checkbox.id] === true) {
+                        checkbox.checked = true;
+                    }
+                });
+                
+                // Restore radio buttons
+                radioButtons.forEach(radio => {
+                    if (savedData[radio.name] === radio.value) {
+                        radio.checked = true;
+                    }
+                });
             }
+            
+            // Save data function
+            function saveData() {
+                const data = {};
+                
+                // Save text inputs
+                textInputs.forEach(input => {
+                    data[input.id] = input.value;
+                });
+                
+                // Save checkboxes
+                checkboxes.forEach(checkbox => {
+                    data[checkbox.id] = checkbox.checked;
+                });
+                
+                // Save radio buttons
+                radioButtons.forEach(radio => {
+                    if (radio.checked) {
+                        data[radio.name] = radio.value;
+                    }
+                });
+                
+                // Save to localStorage
+                localStorage.setItem('tdah_workbook_data', JSON.stringify(data));
+                
+                // Show confirmation
+                alert('Tus respuestas han sido guardadas correctamente. Podrás encontrarlas cuando vuelvas a abrir este workbook en el mismo navegador.');
+            }
+            
+            // Reset data function
+            function resetData() {
+                if (confirm('¿Estás seguro/a de que quieres borrar todas tus respuestas? Esta acción no se puede deshacer.')) {
+                    localStorage.removeItem('tdah_workbook_data');
+                    
+                    // Clear all form elements
+                    textInputs.forEach(input => {
+                        input.value = '';
+                    });
+                    
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+                    
+                    radioButtons.forEach(radio => {
+                        radio.checked = false;
+                    });
+                    
+                    alert('Todas tus respuestas han sido borradas.');
+                }
+            }
+            
+            // Set up event listeners for save and reset buttons
+            document.getElementById('saveBtn').addEventListener('click', saveData);
+            document.getElementById('resetBtn').addEventListener('click', resetData);
+            document.getElementById('saveBtnBottom').addEventListener('click', saveData);
+            document.getElementById('resetBtnBottom').addEventListener('click', resetData);
+            
+            // Auto-save data every 5 minutes
+            setInterval(function() {
+                saveData();
+            }, 300000);
         });
     </script>
 </body>
 </html>
-
